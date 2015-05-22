@@ -28,7 +28,6 @@ describe "guest visit" do
       dessert.items.create(name: "Ice Cream", description: "tasty ice cream", price: 1000)
 
       visit menu_path      
-      save_and_open_page
 
       expect(page).to have_content("Spaghetti")
       expect(page).to have_content("tasty meatballs")

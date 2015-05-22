@@ -7,7 +7,7 @@
     <% category.items.each do |item| %>
       <%= item.name %>
       <%= item.description %>
-      <%= number_to_currency(item.price/100, precision: 2) %>
+      <%= formatted_price(item.price) %>
     <% end %>
   <% end %>
 <h1 id="dessert">Dessert</h1>

@@ -7,17 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <div class="row">
-      <div class="col-xs-8" id="restaurant-name">
-        <h1>Sheazonne's Italian Restaurant</h1>
-      </div>
-      <div class="col-xs-4" id="login-register">
-        <h3><%= link_to "Login", "#" %>
-          <%= link_to "Register", "#" %></h3>
-      </div>
-    </div>
-  </header>
+  <%= render 'partials/header' %>
 <%= yield %>
 
 </body>

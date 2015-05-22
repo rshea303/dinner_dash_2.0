@@ -3,5 +3,6 @@ class StaticPagesController < ApplicationController
   end
 
   def menu
+    @categories = Category.all
   end
 end

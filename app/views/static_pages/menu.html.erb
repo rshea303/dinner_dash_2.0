@@ -3,5 +3,12 @@
     <a href="#pasta">Pasta</a> | <a href="#dessert">Dessert</a> | <a href="#beverages">Beverages</a>
   </div>
 <h1 id="pasta">Pasta</h1>
+  <% @categories.each do |category| %>
+    <% category.items.each do |item| %>
+      <%= item.name %>
+      <%= item.description %>
+      <%= number_to_currency(item.price/100, precision: 2) %>
+    <% end %>
+  <% end %>
 <h1 id="dessert">Dessert</h1>
 <h1 id="beverages">Beverages</h1>

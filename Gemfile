@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'faker'
 gem 'sprockets-rails'
 gem 'rails', '4.2.1'
 gem 'pg'

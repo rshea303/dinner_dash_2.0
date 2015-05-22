@@ -2,13 +2,13 @@
   <div class="col-xs-6 col-xs-offset-3">
     <a href="#pasta">Pasta</a> | <a href="#dessert">Dessert</a> | <a href="#beverages">Beverages</a>
   </div>
-<h1 id="pasta">Pasta</h1>
   <% @categories.each do |category| %>
+    <h1 id="<%= category.name  %>"><%= category.name.capitalize %></h1>
     <% category.items.each do |item| %>
-      <%= item.name %>
-      <%= item.description %>
-      <%= formatted_price(item.price) %>
+      <div class="item">
+        <p><%= item.name %></p>
+        <p><%= item.description %></p>
+        <p><%= formatted_price(item.price) %></p>
+      </div>
     <% end %>
   <% end %>
-<h1 id="dessert">Dessert</h1>
-<h1 id="beverages">Beverages</h1>

@@ -23,8 +23,9 @@
       </div>
     </div>
     <div class="col-xs-4">
-      <%= session[:cart].inspect %>
-      Cart: <%= cart.total_count %>
+      <div id="cart" style="float: right; padding-right: 50px;">
+        <%= link_to "Cart:", cart_items_path %> <%= cart.total_count %>
+      </div>
     </div>
   </div>
 </header>

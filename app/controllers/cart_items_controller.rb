@@ -5,4 +5,7 @@ class CartItemsController < ApplicationController
     redirect_to menu_path
   end
 
+  def index
+  end
+
 end

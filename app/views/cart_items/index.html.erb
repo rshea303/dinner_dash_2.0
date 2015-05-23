@@ -1,1 +1,32 @@
 <h1>Cart Page</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Sub-Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% cart.data.each do |id, quantity| %>
+      <% item = Item.find(id) %>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= item.description %></td>
+      <td><%= formatted_price(item.price) %></td>
+      <td><%= quantity %></td>
+      <td><%= formatted_price(item.price * quantity) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th>Total:</th>
+    <th><%= formatted_price(cart.total_cost) %></th>
+  </tr>
+</table>

@@ -13,4 +13,12 @@ class Cart
   def total_count
     data.values.reduce(:+)
   end
+
+  def total_cost
+    #calc subtotal of each item
+    #add subtotal
+    data.map do |id, quantity|
+      Item.find(id).price * quantity
+    end.reduce(:+)
+  end
 end

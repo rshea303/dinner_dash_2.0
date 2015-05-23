@@ -5,8 +5,12 @@
     </div>
     <div class="col-xs-4" id="login-register">
       <div style="float: right; padding-top: 30px; font-size: 25px;">
-        <span><%= link_to "Login", "#" %></span>
-        <span><%= link_to "Register", new_user_path %></span>
+        <% if current_user %>
+          <span>Welcome, <%= current_user.username.capitalize %>!</span>
+        <% else %>
+          <span><%= link_to "Login", new_session_path  %></span>
+          <span><%= link_to "Register", new_user_path %></span>
+        <% end %>
       </div>
     </div>
   </div>

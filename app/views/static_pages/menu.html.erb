@@ -7,10 +7,11 @@
           <h3 id="<%= category.name  %>"><%= category.name.capitalize %></h3>
         </div>
         <% category.items.each do |item| %>
-        <div class="item" style="border: 1px solid black; margin-bottom: 10px; padding: 3px;">
+        <div class="item" style="border: 1px solid black; margin-bottom: 10px; padding: 15px;">
           <span class="col-xs-2" style="text-align: left;"><%= item.name.capitalize %></span>
           <span><%= item.description %></span>
-          <span style="float: right; margin-right: 95px;"><%= formatted_price(item.price) %></span>
+          <span style="margin-left: 50px;"><%= formatted_price(item.price) %></span>
+          <span style="float: right;"><%= button_to "Add to Cart", cart_items_path(item_id: item.id) %></span>
         </div>
         <% end %>
       <% end %>

@@ -24,7 +24,7 @@
     </div>
     <div class="col-xs-4">
       <%= session[:cart].inspect %>
-      Cart: <%= session[:cart].values.reduce(:+) %>
+      Cart: <%= cart.total_count %>
     </div>
   </div>
 </header>

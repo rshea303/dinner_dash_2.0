@@ -9,4 +9,10 @@ class Order < ActiveRecord::Base
       LineItem.create(item_id: item_id, quantity: quantity)
     end
   end
+
+  def total_cost
+    line_items.map do |line_item|
+      line_item.price * line_item.quantity
+    end.reduce(:+)
+  end
 end

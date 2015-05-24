@@ -1,0 +1,33 @@
+<h1>Individual Order Page</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Sub-Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.line_items.each do |line_item| %>
+    <tr>
+      <td><%= line_item.name %></td>
+      <td><%= line_item.description %></td>
+      <td><%= formatted_price(line_item.price) %></td>
+      <td><%= line_item.quantity %></td>
+      <td><%= formatted_price(line_item.price * line_item.quantity) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th>Total:</th>
+    <th><%= formatted_price(@order.total_cost) %></th>
+  </tr>
+</table>
+
+

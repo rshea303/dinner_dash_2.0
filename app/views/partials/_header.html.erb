@@ -9,7 +9,7 @@
           <span>Welcome, <%= current_user.username.capitalize %>!</span>
           <span><%= link_to "Logout", session_path, method: :delete %></span>
         <% else %>
-          <span><%= link_to "Login", new_session_path  %></span>
+          <span><%= link_to "Login", new_session_path  %></span> |
           <span><%= link_to "Register", new_user_path %></span>
         <% end %>
       </div>
@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-xs-8">
       <div id="categories" style="font-size: 25px;">
-        <%= link_to "Home", root_path %>
+        <%= link_to "Home", root_path %> |
         <%= link_to "Menu", menu_path %>
       </div>
     </div>

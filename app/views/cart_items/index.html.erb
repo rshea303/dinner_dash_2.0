@@ -29,4 +29,15 @@
     <th>Total:</th>
     <th><%= formatted_price(cart.total_cost) %></th>
   </tr>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <% if current_user %>
+      <th><%= button_to "Place Order", user_orders_path(current_user.id) %></th>
+    <% else %>
+      <th></th>
+    <% end %>
+  </tr>
 </table>

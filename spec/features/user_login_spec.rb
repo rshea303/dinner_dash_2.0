@@ -2,19 +2,18 @@ require 'rails_helper'
 
 describe "login" do
   it "user can login" do
-    user_register
+    new_user = User.create(username: "new_user", email: "new_user@example.com", password: "password")
 
     visit root_path
     click_on "Login"
-    fill_in "session[email]", with: "user@example.com"
-    fill_in "session[password]", with: "password"
+    fill_in "session[email]", with: new_user.email
+    fill_in "session[password]", with: new_user.password 
     click_on("Submit")
 
-    expect(page).to have_content("Welcome, Username!")
+    expect(page).to have_content("Welcome, New_user!")
   end
 
   xit "redirects to previous page after login" do
-    user_register
     
     visit menu_path
     first(:button, "Add to Cart").click
@@ -32,21 +31,10 @@ describe "login" do
   end
 end
 
-def user_register
-    visit root_path
-    click_on("Register")
-
-    fill_in "user[username]", with: "username"
-    fill_in "user[email]", with: "user@example.com"
-    fill_in "user[password]", with: "password"
-    fill_in "user[password_confirmation]", with: "password"
-    click_on("Submit")
-end
-
-def user_login
+def user_login(user)
     visit root_path
     click_on "Login"
-    fill_in "session[email]", with: "user@example.com"
-    fill_in "session[password]", with: "password"
+    fill_in "session[email]", with: user.email
+    fill_in "session[password]", with: user.password
     click_on("Submit")
 end

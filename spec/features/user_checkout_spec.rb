@@ -10,7 +10,7 @@ describe "checkout" do
   end
 
   it "authenticated user can checkout" do
-    new_user = User.create(username: "user", email: "user@example.com", password: "password") 
+    new_user = User.create(username: "new_user", email: "new_user@example.com", password: "password") 
     visit '/'
     user_login(new_user)
     visit menu_path

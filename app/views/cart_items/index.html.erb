@@ -37,7 +37,7 @@
     <% if current_user %>
       <th><%= button_to "Place Order", user_orders_path(current_user.id) %></th>
     <% else %>
-      <th></th>
-    <% end %>
+      <th>Please <%= link_to "login", new_session_path %> to place order.</th>
+    <%end%>
   </tr>
 </table>

@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+  before_action :require_login
+  before_action :authorize!
+
   def index
     @user = User.find(params[:user_id])
   end
@@ -17,6 +20,15 @@ class OrdersController < ApplicationController
       @cart.data.clear
       redirect_to user_orders_path(params[:user_id])
     else
+      redirect_to root_path
+    end
+  end
+
+  private
+
+  def authorize!
+    unless current_user.id == params[:user_id].to_i
+      flash[:alert] = "Unauthorized access!"
       redirect_to root_path
     end
   end

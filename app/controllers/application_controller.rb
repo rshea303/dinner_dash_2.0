@@ -18,4 +18,11 @@ class ApplicationController < ActionController::Base
     @cart
   end
   helper_method :cart
+
+  def require_login
+    unless current_user
+      redirect_to new_session_path
+      flash[:alert] = "Please log in first."
+    end
+  end
 end

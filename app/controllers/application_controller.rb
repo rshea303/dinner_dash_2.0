@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :load_cart
+
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
@@ -11,7 +13,6 @@ class ApplicationController < ActionController::Base
   def load_cart
     @cart ||= Cart.new(session[:cart])
   end
-  before_action :load_cart
 
   def cart
     @cart

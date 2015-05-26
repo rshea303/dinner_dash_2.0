@@ -9,7 +9,12 @@ class CartItemsController < ApplicationController
   end
 
   def update
-    cart.increase_quantity(params[:id])
-    redirect_to :back
+    if params[:modify] == "increase"
+      cart.add_item(params[:id])
+      redirect_to :back
+    else
+      cart.decrease_quantity(params[:id])
+      redirect_to :back
+    end
   end
 end

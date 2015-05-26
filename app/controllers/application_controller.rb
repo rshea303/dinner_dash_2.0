@@ -25,4 +25,5 @@ class ApplicationController < ActionController::Base
       flash[:alert] = "Please log in first."
     end
   end
+
 end

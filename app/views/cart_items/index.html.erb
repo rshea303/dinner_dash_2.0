@@ -35,9 +35,9 @@
     <th></th>
     <th></th>
     <% if current_user %>
-      <th><%= button_to "Place Order", user_orders_path(current_user.id) %></th>
+      <th><%= button_to "Place Order", user_orders_path(current_user.id), class: "btn btn-default", style: "background-color: #B7C1C9;" %></th>
     <% else %>
-      <th><%= link_to "Place Order", new_session_path %></th>
+      <th><%= link_to "Place Order", new_session_path, class: "btn btn-default", style: "background-color: #B7C1C9;" %></th>
     <% end %>
   </tr>
 </table>

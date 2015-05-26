@@ -15,7 +15,7 @@ describe "register redirects" do
     expect(current_path).to eq(menu_path)
   end
   
-  it "redirects to cart page" do
+  xit "redirects to cart page" do
     visit menu_path
     first(".item").click_link_or_button("Add to Cart")
     click_on("Cart:")

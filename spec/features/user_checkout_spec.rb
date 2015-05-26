@@ -6,7 +6,7 @@ describe "checkout" do
     first(".item").click_link_or_button("Add to Cart")
     click_on("Cart:")
     
-    expect(page).to have_content("Please login to place order.")
+    expect(page).to have_content("Place Order")
   end
 
   it "authenticated user can checkout" do
@@ -28,8 +28,6 @@ describe "checkout" do
     visit menu_path
     first(".item").click_link_or_button("Add to Cart")
     click_on("Cart:")
-
-    expect(page).not_to have_content("Place Order")
 
     click_on("Login")
     fill_in "session[email]", with: new_user.email

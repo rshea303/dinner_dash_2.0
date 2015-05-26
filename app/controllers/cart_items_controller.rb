@@ -13,8 +13,13 @@ class CartItemsController < ApplicationController
       cart.add_item(params[:id])
       redirect_to :back
     else
-      cart.decrease_quantity(params[:id])
-      redirect_to :back
+      if cart.data[params[:id]] == 1
+        session[:cart].delete(params[:id])
+        redirect_to :back
+      else
+        cart.decrease_quantity(params[:id])
+        redirect_to :back
+      end
     end
   end
 

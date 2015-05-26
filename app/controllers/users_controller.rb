@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      redirect_to session[:before_register_url]
+      session[:user_id] = user.id
+      determine_redirect
     else
       render :new
     end
@@ -18,5 +19,13 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
+  end
+
+  def determine_redirect
+    if session[:before_register_url] == new_session_path
+      redirect_to session[:previous_url]
+    else
+      redirect_to session[:before_register_url]
+    end
   end
 end

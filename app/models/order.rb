@@ -1,7 +1,7 @@
 class Order < ActiveRecord::Base
   belongs_to :user
 
-  has_many :line_items
+  has_many :line_items, :dependent => :destroy
   has_many :items, through: :line_items
 
   def create_line_items(cart_data)

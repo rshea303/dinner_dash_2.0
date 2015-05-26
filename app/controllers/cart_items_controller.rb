@@ -8,4 +8,8 @@ class CartItemsController < ApplicationController
   def index
   end
 
+  def update
+    cart.increase_quantity(params[:id])
+    redirect_to :back
+  end
 end

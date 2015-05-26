@@ -20,4 +20,8 @@ class Cart
     end.reduce(:+)
   end
 
+  def increase_quantity(item_id)
+    data[item_id] += 1
+  end
+
 end

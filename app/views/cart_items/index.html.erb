@@ -17,7 +17,7 @@
       <td><%= item.name %></td>
       <td><%= item.description %></td>
       <td><%= formatted_price(item.price) %></td>
-      <td><%= quantity %></td>
+      <td class="item-quantity"><%= quantity %><%= button_to "+", cart_item_path(item.id), method: :put %></td>
       <td><%= formatted_price(item.price * quantity) %></td>
     </tr>
     <% end %>

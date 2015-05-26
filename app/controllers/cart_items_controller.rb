@@ -17,4 +17,9 @@ class CartItemsController < ApplicationController
       redirect_to :back
     end
   end
+
+  def destroy
+    session[:cart].delete(params[:id])
+    redirect_to :back
+  end
 end

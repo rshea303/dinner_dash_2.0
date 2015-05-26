@@ -24,5 +24,4 @@ class Cart
     data[item_id] -= 1
   end
 
-
 end

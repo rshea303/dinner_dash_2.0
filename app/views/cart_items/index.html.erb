@@ -6,8 +6,11 @@
       <th>Name</th>
       <th>Description</th>
       <th>Price</th>
+      <th></th>
       <th>Quantity</th>
+      <th></th>
       <th>Sub-Total</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -17,8 +20,11 @@
       <td><%= item.name %></td>
       <td><%= item.description %></td>
       <td><%= formatted_price(item.price) %></td>
-      <td class="item-quantity"><%= button_to "+", cart_item_path(item.id, modify: "increase"), method: :put %><%= quantity %><%= button_to "-", cart_item_path(item.id, modify: "decrease"), method: :put %></td>
+      <td><%= button_to "+", cart_item_path(item.id, modify: "increase"), method: :put %>
+      <td class="item-quantity"><%= quantity %></td>
+      <td><%= button_to "-", cart_item_path(item.id, modify: "decrease"), method: :put %>
       <td><%= formatted_price(item.price * quantity) %></td>
+      <td><%= button_to "Remove", cart_item_path(item.id), method: :delete %>
     </tr>
     <% end %>
   </tbody>

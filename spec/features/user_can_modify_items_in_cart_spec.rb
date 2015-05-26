@@ -36,6 +36,18 @@ describe "cart updates" do
     end
   end
 
-  xit "can delete item in cart" do
+  it "can delete item in cart" do
+    new_user = User.create(username: "new_user", email: "new_user@example.com", password: "password")
+    visit menu_path
+    first(".item").click_link_or_button("Add to Cart")
+    click_on("Cart:")
+
+    within("table") do
+      expect(page).to have_content("1")
+    end
+
+    click_on("Remove")
+
+    expect(page).to have_content("Cart is empty")
   end
 end

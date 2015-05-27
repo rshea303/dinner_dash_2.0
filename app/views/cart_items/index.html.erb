@@ -20,9 +20,9 @@
       <td><%= item.name %></td>
       <td><%= item.description %></td>
       <td><%= formatted_price(item.price) %></td>
-      <td><%= button_to "+", cart_item_path(item.id, modify: "increase"), method: :put %>
-      <td class="item-quantity"><%= quantity %></td>
-      <td><%= button_to "-", cart_item_path(item.id, modify: "decrease"), method: :put %>
+      <td style="float: right;"><%= button_to "+", cart_item_path(item.id, modify: "increase"), method: :put %>
+      <td class="item-quantity" style="text-align: center; width: 30px;"><%= quantity %></td>
+      <td style="float: left;"><%= button_to "-", cart_item_path(item.id, modify: "decrease"), method: :put %>
       <td><%= formatted_price(item.price * quantity) %></td>
       <td><%= button_to "Remove", cart_item_path(item.id), method: :delete %>
     </tr>
@@ -36,6 +36,7 @@
     <th></th>
     <th>Total:</th>
     <th><%= formatted_price(cart.total_cost) %></th>
+    <th></th>
   </tr>
   <tr>
     <th></th>

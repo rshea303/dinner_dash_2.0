@@ -10,9 +10,9 @@
         <% category.items.each do |item| %>
         <div class="item" style="margin-bottom: 10px; padding: 15px; height: 25px;">
           <div class="col-xs-2" style="text-align: left;"><%= item.name.capitalize %></div>
-          <div class="col-xs-6"><%= item.description %></div>
+          <div class="col-xs-5" style="text-align: left;"><%= item.description %></div>
           <div class="col-xs-2"><%= formatted_price(item.price) %></div>
-          <div class="col-xs-2" style="margin: 0px;"><%= button_to "Add to Cart", cart_items_path(item_id: item.id) %></div>
+          <div class="col-xs-1" style="margin: 0px;"><%= button_to "Add to Cart", cart_items_path(item_id: item.id) %></div>
         </div>
         <% end %>
       </div>

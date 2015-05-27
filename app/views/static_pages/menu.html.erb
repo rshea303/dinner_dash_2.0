@@ -3,17 +3,19 @@
     <h3><a href="#pasta">Pasta</a> | <a href="#dessert">Dessert</a> | <a href="#beverages">Beverages</a></h3>
     <div class="row">
       <% @categories.each do |category| %>
-        <div class="row category-title" style="text-align: left; margin-left: 0px;">
+        <div class="row" style="margin-bottom: 20px;">
+        <div class="row category-title" style="text-align: left; margin-left: 30px;">
           <h3 id="<%= category.name  %>"><%= category.name.capitalize %></h3>
         </div>
         <% category.items.each do |item| %>
-        <div class="item" style="border: 1px solid black; margin-bottom: 10px; padding: 15px;">
-          <span class="col-xs-2" style="text-align: left;"><%= item.name.capitalize %></span>
-          <span><%= item.description %></span>
-          <span style="margin-left: 50px;"><%= formatted_price(item.price) %></span>
-          <span style="float: right;"><%= button_to "Add to Cart", cart_items_path(item_id: item.id) %></span>
+        <div class="item" style="margin-bottom: 10px; padding: 15px; height: 25px;">
+          <div class="col-xs-2" style="text-align: left;"><%= item.name.capitalize %></div>
+          <div class="col-xs-6"><%= item.description %></div>
+          <div class="col-xs-2"><%= formatted_price(item.price) %></div>
+          <div class="col-xs-2" style="margin: 0px;"><%= button_to "Add to Cart", cart_items_path(item_id: item.id) %></div>
         </div>
         <% end %>
+      </div>
       <% end %>
     </div>
   </div>

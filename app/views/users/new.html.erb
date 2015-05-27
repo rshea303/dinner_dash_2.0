@@ -1,23 +1,43 @@
-<h1>User Registration Page</h1>
+<h1 style="margin-left: 12px;">User Registration Page</h1>
 
-<%= form_for @user do |f| %>
-  <p>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p>
-    <%= f.submit "Submit" %>
-  </p>
-<% end %>
+<form>
+  <div class="form-group">
+    <%= form_for @user do |f| %>
+      <div class="col-xs-2">
+        <%= f.label :username %>
+      </div>
+      <div class="row">
+        <div class="col-xs-4" style="font-family: verdana;">
+          <%= f.text_field :username %>
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <%= f.label :email %>
+      </div>
+      <div class="row">
+        <div class="col-xs-4" style="font-family: verdana;">
+          <%= f.email_field :email %>
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <%= f.label :password %>
+      </div>
+      <div class="row">
+        <div class="col-xs-4" style="font-family: verdana;">
+          <%= f.password_field :password %>
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <%= f.label :password_confirmation %>
+      </div>
+      <div class="row">
+        <div class="col-xs-4" style="font-family: verdana;">
+          <%= f.password_field :password_confirmation %>
+        </div>
+      </div>
+      <div class="col-xs-2" style="margin-top: 5px;">
+        <%= f.submit "Submit" %>
+      </div>
+    <% end %>
+  </div>
+</form>

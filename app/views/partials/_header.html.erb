@@ -9,7 +9,7 @@
           <span style="padding-right: 25px;">Welcome, <%= current_user.username.capitalize %>!</span>
           <span><%= link_to "Logout", session_path, method: :delete %></span>
         <% else %>
-          <span><%= link_to "Login", new_session_path  %></span> |
+          <span><%= link_to "Login", new_session_path %></span> |
           <span><%= link_to "Register", new_user_path %></span>
         <% end %>
       </div>

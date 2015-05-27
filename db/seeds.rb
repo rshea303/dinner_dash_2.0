@@ -10,7 +10,7 @@ class Seed
     puts "seeding categories"
     puts "=================="
     
-    cats = ['pasta', 'dessert', 'beverages']
+    cats = ['appetizers', 'pasta', 'pizza', 'dessert', 'beverages']
     cats.each do |cat| 
       new_cat = Category.create(name: cat) 
       puts "Category Name: #{new_cat}"

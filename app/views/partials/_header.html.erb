@@ -1,12 +1,12 @@
 <header style="padding: 10px; border-bottom: solid black;">
   <div class="row">
-    <div class="col-xs-8" id="restaurant-name">
+    <div class="col-xs-8" id="restaurant-name" style="padding-left: 65px;">
       <h1>Sheazonne's Italian Restaurant</h1>
     </div>
     <div class="col-xs-4" id="login-register">
-      <div style="float: right; padding-top: 30px; font-size: 25px;">
+      <div style="float: right; padding-top: 30px; padding-right: 50px; font-size: 20px;">
         <% if current_user %>
-          <span>Welcome, <%= current_user.username.capitalize %>!</span>
+          <span style="padding-right: 25px;">Welcome, <%= current_user.username.capitalize %>!</span>
           <span><%= link_to "Logout", session_path, method: :delete %></span>
         <% else %>
           <span><%= link_to "Login", new_session_path  %></span> |
@@ -17,13 +17,13 @@
   </div>
   <div class="row">
     <div class="col-xs-8">
-      <div id="categories" style="font-size: 25px;">
+      <div id="categories" style="font-size: 20px; padding-left: 50px;">
         <%= link_to "Home", root_path %> |
         <%= link_to "Menu", menu_path %>
       </div>
     </div>
     <div class="col-xs-4">
-      <div id="cart" style="float: right; padding-right: 50px;">
+      <div id="cart" style="float: right; padding-right: 50px; font-size: 20px;">
         <%= link_to "Cart:", cart_items_path %> <%= cart.total_count %> items
       </div>
     </div>

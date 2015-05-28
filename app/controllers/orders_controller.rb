@@ -12,12 +12,16 @@ class OrdersController < ApplicationController
 
   def create
     if current_user
-      order = Order.new(user_id: params[:user_id])
-      new_line_items = order.create_line_items(session[:cart])
-      order.line_items << new_line_items
+      order = current_user.orders.create do |order|
+        cart.data.each do |item_id, quantity|
+          order.line_items.build do |line_item|
+            line_item.item_id  = item_id
+            line_item.quantity = quantity 
+          end
+        end
+      end
       @order = order
       @order.save
-      @cart.data.clear
       redirect_to user_orders_path(params[:user_id])
     else
       redirect_to root_path

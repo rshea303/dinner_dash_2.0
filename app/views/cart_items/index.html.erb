@@ -20,9 +20,9 @@
       <td><%= item.name %></td>
       <td><%= item.description %></td>
       <td><%= formatted_price(item.price) %></td>
-      <td style="float: right;"><%= button_to "+", cart_item_path(item.id, modify: "increase"), method: :put %>
-      <td class="item-quantity" style="text-align: center; width: 30px;"><%= quantity %></td>
-      <td style="float: left;"><%= button_to "-", cart_item_path(item.id, modify: "decrease"), method: :put %>
+      <td class="increase-button"><%= button_to "+", cart_item_path(item.id, modify: "increase"), method: :put %>
+      <td class="item-quantity"><%= quantity %></td>
+      <td class="decrease-button"><%= button_to "-", cart_item_path(item.id, modify: "decrease"), method: :put %>
       <td><%= formatted_price(item.price * quantity) %></td>
       <td><%= button_to "Remove", cart_item_path(item.id), method: :delete %>
     </tr>
@@ -46,15 +46,15 @@
     <th></th>
     <th></th>
     <% if current_user %>
-      <th><%= button_to "Place Order", user_orders_path(current_user.id), class: "btn btn-default", style: "background-color: #B7C1C9;" %></th>
+      <th><%= button_to "Place Order", user_orders_path(current_user.id), class: "btn btn-default place-order" %></th>
     <% else %>
-      <th><%= link_to "Place Order", new_session_path, class: "btn btn-default", style: "background-color: #B7C1C9;" %></th>
+      <th><%= link_to "Place Order", new_session_path, class: "btn btn-default place-order" %></th>
     <% end %>
   </tr>
 </table>
 <% else %>
   <div class="row">
-    <div class="col-xs-4 col-xs-offset-4" style="text-align: center;">
+    <div class="col-xs-4 col-xs-offset-4 empty-cart">
       <h1>Cart is empty</h1>
     </div>
   </div>

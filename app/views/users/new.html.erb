@@ -5,7 +5,7 @@
     <%= f.label :username %>
   </div>
   <div class="row">
-    <div class="col-xs-4" style="font-family: verdana;">
+    <div class="col-xs-4 field-font">
       <%= f.text_field :username %>
     </div>
   </div>
@@ -13,7 +13,7 @@
     <%= f.label :email %>
   </div>
   <div class="row">
-    <div class="col-xs-4" style="font-family: verdana;">
+    <div class="col-xs-4 field-font">
       <%= f.email_field :email %>
     </div>
   </div>
@@ -21,7 +21,7 @@
     <%= f.label :password %>
   </div>
   <div class="row">
-    <div class="col-xs-4" style="font-family: verdana;">
+    <div class="col-xs-4 font-field">
       <%= f.password_field :password %>
     </div>
   </div>
@@ -29,11 +29,11 @@
     <%= f.label :password_confirmation %>
   </div>
   <div class="row">
-    <div class="col-xs-4" style="font-family: verdana;">
+    <div class="col-xs-4 font-field">
       <%= f.password_field :password_confirmation %>
     </div>
   </div>
-  <div class="col-xs-2" style="margin-top: 5px;">
+  <div class="col-xs-2 register-submit">
     <%= f.submit "Submit" %>
   </div>
 <% end %>

@@ -5,7 +5,7 @@
     <%= f.label :email %>
   </div>
   <div class="row">
-    <div class="col-xs-4" style="font-family: verdana;">
+    <div class="col-xs-4 email-field">
       <%= f.email_field :email %>
     </div>
   </div>
@@ -13,14 +13,14 @@
     <%= f.label :password %>
   </div>
   <div class="row">
-    <div class="col-xs-4" style="font-family: verdana;">
+    <div class="col-xs-4 password-field">
       <%= f.password_field :password %>
     </div>
   </div>
-  <div class="col-xs-1" style="margin-top: 5px;">
+  <div class="col-xs-1 submit-field">
     <%= f.submit "Submit" %>
   </div>
-  <div class="col-xs-4" id="register" style="margin-top: 5px;">
+  <div class="col-xs-4" id="register">
   If you are a new user, please <%= link_to "Register", new_user_path %> for an account.
   </div>
 <% end %>

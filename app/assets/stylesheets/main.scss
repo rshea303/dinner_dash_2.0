@@ -1,3 +1,122 @@
+/* universal */
+
 body {
   background-color: #F5ECCB;
+  font-family: 'Playball', cursive;
+}
+
+header {
+  padding: 10px;
+  border-bottom: solid black;
+}
+
+/* header */
+
+#restaurant-name {
+  padding-left: 65px;
+}
+
+.user-welcome {
+  padding-right: 25px;
+}
+
+#categories {
+  font-size: 20px;
+  padding-left: 50px;
+}
+
+#cart {
+  float: right;
+  padding-right: 50px;
+  font-size: 20px;
+}
+
+/* home page */
+
+/* menu page */
+
+.category-links {
+  text-align: center;
+}
+
+.category-block {
+  margin-bottom: 20px;
+}
+
+.category-title {
+  text-align: left;
+  margin-left: 30px;
+}
+
+.item {
+  margin-bottom: 10px;
+  padding: 15px;
+  height: 25px;
+}
+
+.item-name {
+  text-align: left;
+}
+
+.item-description {
+  text-align: left;
+}
+
+.add-to-cart {
+  margin: 0px;
+}
+
+/* cart page */
+
+.increase-button {
+  float: right;
+}
+
+.item-quantity {
+  text-align: center;
+  width: 30px;
+}
+
+.decrease-button {
+  float: left;
+}
+
+.place-order {
+  background-color: #B7C1C9;
+}
+
+.empty-cart {
+  text-align: center;
+}
+
+/* order history */
+
+/* order show */
+
+/* login page */
+
+.email-field {
+  font-family: verdana;
+}
+
+.password-field {
+  font-family: verdana;
+}
+
+.submit-button {
+  margin-top: 5px;
+}
+
+#register {
+  margin-top: 5px;
+}
+
+/* register page */
+
+.font-field {
+  font-family: verdana;
+}
+
+.register-sumbit {
+  margin-top: 5px;
 }

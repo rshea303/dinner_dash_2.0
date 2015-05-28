@@ -1,18 +1,18 @@
 <div class="row">
-  <div class="col-xs-8 col-xs-offset-2" style="text-align: center;">
+  <div class="col-xs-8 col-xs-offset-2 category-links">
     <h3><a href="#appetizers">Appetizers</a> | <a href="#pasta">Pasta</a> | <a href="#pizza">Pizza</a> | <a href="#dessert">Dessert</a> | <a href="#beverages">Beverages</a></h3>
     <div class="row">
       <% @categories.each do |category| %>
-        <div class="row" style="margin-bottom: 20px;">
-        <div class="row category-title" style="text-align: left; margin-left: 30px;">
+        <div class="row category-block">
+        <div class="row category-title">
           <h3 id="<%= category.name  %>"><%= category.name.capitalize %></h3>
         </div>
         <% category.items.each do |item| %>
-        <div class="item" style="margin-bottom: 10px; padding: 15px; height: 25px;">
-          <div class="col-xs-2" style="text-align: left;"><%= item.name.capitalize %></div>
-          <div class="col-xs-6" style="text-align: left;"><%= item.description %></div>
+        <div class="item">
+          <div class="col-xs-2 item-name"><%= item.name.capitalize %></div>
+          <div class="col-xs-6 item-description"><%= item.description %></div>
           <div class="col-xs-2"><%= formatted_price(item.price) %></div>
-          <div class="col-xs-2" style="margin: 0px;"><%= button_to "Add to Cart", cart_items_path(item_id: item.id) %></div>
+          <div class="col-xs-2 add-to-cart"><%= button_to "Add to Cart", cart_items_path(item_id: item.id) %></div>
         </div>
         <% end %>
       </div>

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "account info" do
-  it "authenticated user can visit account info page" do
+  it "user can see My Account info link after logging in" do
     new_user = User.create(username: "new_user",
                             email: "new_user@example.com",
                             password: "password"
@@ -13,6 +13,22 @@ describe "account info" do
     user_login(new_user)
 
     expect(page).to have_content("My Account")
+  end
+
+  it "authenticated user can see account info page" do
+    new_user = User.create(username: "new_user",
+                            email: "new_user@example.com",
+                            password: "password"
+                           )
+
+    visit root_path
+    user_login(new_user)
+    click_on("My Account")
+    expect(current_path).to eq(user_path(new_user.id))
+
+    expect(page).to have_content("#{new_user.username}")
+    expect(page).to have_content("#{new_user.email}")
+    expect(page).to have_content("Order History")
   end
 end
 

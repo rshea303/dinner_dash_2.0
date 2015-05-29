@@ -1,7 +1,7 @@
 <h1>Account Info Page</h1>
 
 <p>
-  Name: <%= @user.username %>
+Name: <%= @user.username %><%= link_to "Edit Name", edit_user_path(@user.id) %>
 </p>
 <p>
   Email: <%= @user.email %>

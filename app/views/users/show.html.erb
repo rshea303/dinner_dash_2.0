@@ -1,10 +1,13 @@
 <h1>Account Info Page</h1>
 
 <p>
-Name: <%= @user.username %><%= link_to "Edit Name", edit_user_path(@user.id) %>
+Name: <%= @user.username %>
 </p>
 <p>
   Email: <%= @user.email %>
+</p>
+<p>
+  <%= button_to "Edit Account", edit_user_path(@user.id), method: :get %>
 </p>
 <p>
   <%= link_to "Order History", user_orders_path(@user.id) %>

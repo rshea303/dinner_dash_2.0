@@ -22,6 +22,7 @@ class OrdersController < ApplicationController
       end
       @order = order
       @order.save
+      session[:cart].clear
       redirect_to user_orders_path(params[:user_id])
     else
       redirect_to root_path

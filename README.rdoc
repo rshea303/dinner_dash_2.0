@@ -1,1 +1,15 @@
 https://sheazonnes.herokuapp.com/
+
+This is a simple cart web app for a fictitious restaurant. 
+This was an independent, test-driven web app.
+
+-authentication
+-authorization
+-simple cart
+-jQuery (menu page)
+-registration of new users
+-login of users
+-twitter bootstrap
+-html
+-css
+

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_login, except: [:new, :create]
+  before_action :authorize!, only: [:show, :edit, :update, :index]
   
   def show
     @user = User.find(params[:id])
@@ -36,6 +38,13 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
+  end
+
+  def authorize!
+    unless current_user.id == params[:id].to_i
+      flash[:alert] = "Unauthorized access!"
+      redirect_to root_path
+    end 
   end
 
 end

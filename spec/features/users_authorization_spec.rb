@@ -21,6 +21,16 @@ describe "an unauthenticated user" do
 
     expect(page).to have_content("Unauthorized access!")
   end
+  
+  it "cannot visit a users account page" do
+    new_user = User.create(username: "new_user", email: "new_user@example.com", password: "password")
+
+    visit user_path(new_user.id)
+
+    expect(current_path).to eq(new_session_path)
+    expect(page).to have_content("Please log in first.")
+  end
+
 end
 
 def user_login(user)

@@ -5,7 +5,9 @@ describe "user" do
   it "can edit name" do
     user = User.create(username: "user", email: "user@example.com", password: "password")
     user_login(user)
+
     click_on("My Account")
+
     click_on("Edit Account")
 
     fill_in "Username", with: "updated_name"

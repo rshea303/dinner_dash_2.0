@@ -3,6 +3,7 @@ require 'rails_helper'
 describe "cart" do
   it "user can add items to cart" do
     visit menu_path 
+
     first(".item").click_link_or_button("Add to Cart")
 
     expect(page).to have_content("Cart: 1")

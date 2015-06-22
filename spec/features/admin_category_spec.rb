@@ -21,13 +21,24 @@ describe "admin category" do
     admin_login
 
     click_on("Categories")
-
     click_on("Edit Category")
 
     fill_in "category[name]", with: "updated name"
     click_on("Update Category")
 
     expect(page).to have_content("updated name")
+  end
+
+  it "can delete a category" do
+    Category.create(name: "Destroy This Category")
+    admin_login
+
+    click_on("Categories")
+    counter = Category.count
+    click_on("Delete Category")
+
+    expect(page).not_to have_content("Destroy This Category")
+    expect(Category.count).to eq(counter - 1)
   end
 
   def admin_login

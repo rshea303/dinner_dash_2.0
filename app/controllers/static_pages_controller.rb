@@ -5,4 +5,7 @@ class StaticPagesController < ApplicationController
   def menu
     @categories = Category.all
   end
+
+  def dashboard
+  end
 end

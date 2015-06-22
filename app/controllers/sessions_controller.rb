@@ -8,7 +8,11 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email])
     if user and user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to session[:previous_url]
+      if user.admin == true
+        redirect_to dashboard_path
+      else
+        redirect_to session[:previous_url]
+      end
     else
       render :new
     end

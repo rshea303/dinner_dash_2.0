@@ -49,6 +49,7 @@ class Seed
     User.create(username: "user", email: "user@example.com", password: "password")
     User.create(username: "user2", email: "user2@example.com", password: "password")
     User.create(username: "user3", email: "user3@example.com", password: "password")
+    User.create(username: "admin", email: "admin@example.com", password: "password", admin: true)
     puts "#{User.count} users seeded successfully!"
     puts "*******************************"
     puts ""

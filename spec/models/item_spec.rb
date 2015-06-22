@@ -9,4 +9,11 @@ RSpec.describe Item, type: :model do
     expect(category.items.first.description).to eq("spaghetti description")
     expect(category.items.first.price).to eq(1200)
   end
+
+  it "can be created" do
+    count = Item.count
+    Item.create(name: "new item", description: "new item description", price: 1000)
+
+    expect(Item.count).to eq(count + 1)
+  end 
 end

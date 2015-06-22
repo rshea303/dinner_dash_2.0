@@ -46,4 +46,10 @@ RSpec.describe Item, type: :model do
     item2 = Item.new(name: "the newest item", description: "desc", price: 1000)
     expect(item2).not_to be_valid
   end
+
+  it "has unique description" do 
+    item = Item.create(name: "first item", description: "desc", price: 1000)
+    item2 = Item.new(name: "second item", description: "desc", price: 1000)
+    expect(item2).not_to be_valid
+  end
 end

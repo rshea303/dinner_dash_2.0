@@ -1,4 +1,8 @@
 class Item < ActiveRecord::Base
+  validates :name, presence: true, uniqueness: true
+  validates :description, presence: true
+  validates :price, presence: true
+
   belongs_to :category
 
   has_many :line_items

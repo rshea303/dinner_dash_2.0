@@ -3,6 +3,12 @@ https://sheazonnes.herokuapp.com/
 This is a simple cart web app for a fictitious restaurant. 
 This was an independent, test-driven web app.
 
+user:     user@example.com
+password: password
+
+admin:    admin@example.com
+password: password
+
 -authentication
 -authorization
 -simple cart

@@ -14,6 +14,7 @@ describe "admin category" do
 
     expect(page).to have_content("New Category")
     expect(Category.count).to eq(counter + 1)
+    expect(page).to have_content("New Category successfully created!")
   end
 
   it "can edit a category" do

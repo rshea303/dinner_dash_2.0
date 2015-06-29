@@ -23,6 +23,7 @@ class OrdersController < ApplicationController
       @order = order
       @order.save
       session[:cart].clear
+      flash[:notice] = "Thank you for your order"
       redirect_to user_orders_path(params[:user_id])
     else
       redirect_to root_path

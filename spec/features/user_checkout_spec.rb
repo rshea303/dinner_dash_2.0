@@ -29,6 +29,7 @@ describe "checkout" do
     click_on("Place Order")
 
     expect(current_path).to eq(user_orders_path(new_user.id))
+    expect(page).to have_content("Thank you for your order")
   end
 
   it "an unauthenticated user can checkout after logging in" do

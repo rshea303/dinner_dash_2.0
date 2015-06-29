@@ -1,8 +1,16 @@
 require 'rails_helper'
 
 describe "an unauthenticated user" do
+
+  def create_item
+    category = Category.create(name: "new category")
+    category.items.create(name: "new item", description: "desc", price: 5000)
+  end
+
   it "cannot visit a users orders page" do
+    create_item
     new_user = User.create(username: "new_user", email: "new_user@example.com", password: "password")
+
     user_login(new_user)
     visit menu_path
 

@@ -1,7 +1,14 @@
 require 'rails_helper'
 
 describe "checkout" do
+  def create_item
+    category = Category.create(name: "new category")
+    category.items.create(name: "new item", description: "desc", price: 5000)
+  end
+
   it "an unauthenticated cannot checkout until they are logged in" do
+    create_item
+
     visit menu_path
     first(".item").click_link_or_button("Add to Cart")
     click_on("Cart:")
@@ -10,7 +17,9 @@ describe "checkout" do
   end
 
   it "authenticated user can checkout" do
+    create_item
     new_user = User.create(username: "new_user", email: "new_user@example.com", password: "password") 
+
     visit '/'
     user_login(new_user)
     visit menu_path
@@ -23,6 +32,7 @@ describe "checkout" do
   end
 
   it "an unauthenticated user can checkout after logging in" do
+    create_item
     new_user = User.create(username: "new_user", email: "new_user@example.com", password: "password") 
 
     visit menu_path

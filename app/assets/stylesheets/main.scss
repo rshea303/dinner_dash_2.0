@@ -137,3 +137,17 @@ header {
 .table {
   width: auto;
 }
+
+/* flash */
+
+.flash_alert {
+  font-size: 20px;
+  background-color: red;
+  text-align: center;
+}
+
+.flash_notice {
+  font-size: 20px;
+  background-color: green;
+  text-align: center;
+}

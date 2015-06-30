@@ -32,6 +32,7 @@ describe "admin category" do
 
   it "can delete a category" do
     Category.create(name: "Destroy This Category")
+    admin = User.create(username: "admin", email: "admin@example.com", password: "password", admin: true)
     admin_login
 
     click_on("Categories")
@@ -41,7 +42,7 @@ describe "admin category" do
     expect(page).not_to have_content("Destroy This Category")
     expect(Category.count).to eq(counter - 1)
   end
-
+  
   def admin_login
     admin = User.create(username: "admin", email: "admin@example.com", password: "password", admin: true)
     visit root_path
@@ -50,4 +51,5 @@ describe "admin category" do
     fill_in "session[password]", with: admin.password
     click_on("Submit")
   end
+
 end

@@ -3,7 +3,7 @@ class CartItemsController < ApplicationController
     cart.add_item(params[:item_id]) 
     session[:cart] = cart.data
     item = Item.find(params[:item_id])
-    flash[:notice] = "#{item.name} added to cart."
+    flash[:notice] = "#{item.name.capitalize} added to cart."
     redirect_to menu_path
   end
 
